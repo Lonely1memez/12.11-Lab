@@ -1,30 +1,34 @@
 #include <iostream>
-
 using namespace std;
 
-// recursive PrintNumPattern() function
-void PrintNumPattern(int num1, int num2)
+//defining PrintNumPattern function, getting n1 and n2 as parameter
+void PrintNumPattern(int n1, int n2)
 {
-	if (num1 == 0 || num1 < 0)
-  {
-        cout<<num1<<" ";
-	}
-	else
-  {
-    	cout<<num1<<" ";
-    	PrintNumPattern(num1 - num2, num2) ;
-    	cout<<num1<<" ";
-  }
+    if (n1 < 0)
+    {
+        cout<<n1<<" ";
+    }
+    else
+    {
+        cout<<n1<<" ";
+        PrintNumPattern(n1 - n2, n2) ;
+        cout<<n1<<" ";
+    }
 }
 
-int main(int argc, char* argv[]) 
+//main method 
+int main()
 {
-	int num1;
-	int num2;
-	
-	cin >> num1;
-	cin >> num2;
-	PrintNumPattern(num1, num2);
-	
-	return 0;
+    //declaring num1 as integer type
+    int num1;
+    //declaring num2 as integer type
+    int num2;
+    //getting num1 from user
+    cin >> num1;
+    //getting num2 from user
+    cin >> num2;
+    //calling PrintNumPattern function, passing num1,num2 as argument 
+    PrintNumPattern(num1, num2);
+
+    return 0;
 }
